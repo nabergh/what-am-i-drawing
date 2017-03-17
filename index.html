@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Socket App</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script src="./jquery.elastic.source.js"></script>
+  <link rel="stylesheet" href="game.css">
+
+
+</head>
+<body>
+  <h1>
+    What am I drawing?
+  </h1>
+  <h2 id="round-instructions">Searching for an opponent...</h2>
+  <div id="p1">
+    <div id="painter">
+      <h2 class="instructions">
+        Draw something!
+      </h2>
+      <h3 id="painter-timer">
+        <span class="pronoun">You</span> have 0:<span class="time">20</span> seconds to draw.
+      </h3>
+      <div id="cursor"></div>
+      <canvas id="drawingBoard" width="600" height="400"></canvas>
+      <div id="tools">
+        <div id="clear"></div>
+        <div class="color-pick" style="background-color:black"></div>
+        <div class="color-pick" style="background-color:blue"></div>
+        <div class="color-pick" style="background-color:green"></div>
+        <div class="color-pick" style="background-color:yellow"></div>
+        <div class="color-pick" style="background-color:red"></div>
+        <div class="color-pick" style="background-color:white"></div>
+        <div class="weight-pick" weight="5"></div>
+        <div class="weight-pick" weight="10"></div>
+        <div class="weight-pick" weight="20"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="p2">
+    <div id="guesser">
+      <div class="instructions">
+        <h2>
+          Guess what they are drawing!
+        </h2>
+        <h4>
+          Your opponent is drawing something.  Guess what they draw below.
+        </h4>
+      </div>
+        <textarea class="guess" rows="1"></textarea>
+        <p class="guess">Type guess here.</p>
+        <p>
+          <span class="pronoun">You</span> have 0:<span class="time">30</span> seconds to guess.
+        </p>
+      </div>
+    </div>
+
+    <div id="cover">
+    </div>
+
+    <script src="./game.js"></script>
+    <script src="./paint.js"></script>
+
+  </body>
